@@ -1,9 +1,8 @@
 'use strict';
 
-exports.http = (request, response) => {
-  response.status(200).send('Hello World!');
-};
+const config = require('./config.json');
 
-exports.event = (event, callback) => {
-  callback();
+exports.ping = (request, response) => {
+  // Everything is ok
+  response.status(200).send('Pong!');
 };

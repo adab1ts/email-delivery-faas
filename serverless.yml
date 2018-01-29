@@ -1,11 +1,13 @@
-service: enlinea-email
+service: ${file(./config.json):SERVICE_ID}
 
 provider:
   name: google
   runtime: nodejs
-  project: my-project
+  memorySize: 256
+  timeout: 60s
+  project: ${file(./config.json):PROJECT_ID}
   # the path to the credentials file needs to be absolute
-  credentials: ~/.gcloud/keyfile.json
+  credentials: ${file(./config.json):CREDENTIALS_FILE}
 
 plugins:
   - serverless-google-cloudfunctions
@@ -17,10 +19,12 @@ package:
     - node_modules/**
     - .gitignore
     - .git/**
+    - LICENSE.txt
+    - README.md
 
 functions:
-  first:
-    handler: http
+  ping:
+    handler: ping
     events:
       - http: path
 
@@ -43,3 +47,5 @@ functions:
 #      name: my-serverless-service-bucket
 #  imports:
 #    - path: my_template.jinja
+
+frameworkVersion: "=1.25.0"
