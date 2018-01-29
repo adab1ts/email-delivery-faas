@@ -1,13 +1,21 @@
 {
-  "name": "google-nodejs",
-  "version": "0.1.0",
-  "description": "",
+  "name": "email-delivery-faas",
+  "version": "1.0.0",
+  "description": "Serverless function to deliver email sent from a website's contact form",
+  "author": "Adab1ts <info@adabits.org> (https://www.adabits.org)",
+  "contributors": [
+    "Klaudia Alvarez <klaudia@adabits.org> (https://github.com/laklau)",
+    "Carles Muiños <carles@adabits.org> (https://github.com/zuzust)"
+  ],
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "serverless deploy",
+    "call": "serverless invoke --function",
+    "info": "serverless info",
+    "logs": "serverless logs --function",
+    "remove": "serverless remove"
   },
-  "author": "serverless.com",
-  "license": "MIT",
   "dependencies": {
     "serverless-google-cloudfunctions": "^1.1.0"
   }
