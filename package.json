@@ -17,6 +17,8 @@
     "remove": "serverless remove"
   },
   "dependencies": {
+    "bunyan": "^1.8.12",
+    "nodemailer": "^4.4.2",
     "serverless-google-cloudfunctions": "^1.1.0"
   }
 }

@@ -1,13 +1,13 @@
-service: ${file(./config.json):SERVICE_ID}
+service: ${file(./config.json):service_id}
 
 provider:
   name: google
   runtime: nodejs
   memorySize: 256
   timeout: 60s
-  project: ${file(./config.json):PROJECT_ID}
+  project: ${file(./config.json):project_id}
   # the path to the credentials file needs to be absolute
-  credentials: ${file(./config.json):CREDENTIALS_FILE}
+  credentials: ${file(./config.json):credentials_file}
 
 plugins:
   - serverless-google-cloudfunctions
@@ -28,24 +28,9 @@ functions:
     events:
       - http: path
 
-  # NOTE: the following uses an "event" event (pubSub event in this case).
-  # Please create the corresponding resources in the Google Cloud
-  # before deploying this service through Serverless
-
-  #second:
-  #  handler: event
-  #  events:
-  #    - event:
-  #        eventType: providers/cloud.pubsub/eventTypes/topic.publish
-  #        resource: projects/*/topics/my-topic
-
-# you can define resources, templates etc. the same way you would in a
-# Google Cloud deployment configuration
-#resources:
-#  resources:
-#    - type: storage.v1.bucket
-#      name: my-serverless-service-bucket
-#  imports:
-#    - path: my_template.jinja
+  check:
+    handler: check
+    events:
+      - http: path
 
 frameworkVersion: "=1.25.0"
