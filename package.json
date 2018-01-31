@@ -2,12 +2,25 @@
   "name": "email-delivery-faas",
   "version": "1.0.0",
   "description": "Serverless function to deliver email sent from a website's contact form",
+  "keywords": [
+    "serverless",
+    "google-cloud-functions",
+    "FaaS",
+    "email"
+  ],
   "author": "Adab1ts <info@adabits.org> (https://www.adabits.org)",
   "contributors": [
     "Klaudia Alvarez <klaudia@adabits.org> (https://github.com/laklau)",
     "Carles Muiños <carles@adabits.org> (https://github.com/zuzust)"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adab1ts/email-delivery-faas.git"
+  },
   "license": "MIT",
+  "engines": {
+    "node": ">=6"
+  },
   "main": "index.js",
   "scripts": {
     "deploy": "serverless deploy",
