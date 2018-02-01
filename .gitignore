@@ -1,6 +1,6 @@
 # Serverless
 .serverless
-.env*
+secrets/*.json
 config.*
 !config.*.sample
 tmp
