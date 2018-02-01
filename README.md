@@ -31,8 +31,8 @@ Then configure your service using the `config.json.sample` file supplied:
 # Rename the configuration file
 $ mv config.json.sample config.json
 
-# Fill the config file with your data
-# Watch https://www.youtube.com/watch?v=JJ44WA_eV8E for more info
+# Fill the config file with your data.
+# Read https://developers.google.com/gmail/api/quickstart/nodejs to know how to get the required data.
 $ vi config.json
 ```
 
